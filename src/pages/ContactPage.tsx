@@ -3,8 +3,28 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { useForm } from "react-hook-form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const ContactPage = () => {
+  const form = useForm();
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+    // Handle form submission
+  };
+
   return (
     <div className="min-h-screen bg-saas-black text-white">
       <Navbar />
@@ -109,115 +129,141 @@ const ContactPage = () => {
             <div className="bg-saas-darkGray rounded-xl p-8 border border-gray-800">
               <h2 className="text-2xl font-bold mb-8">Send Us a Message</h2>
 
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor="first-name"
-                      className="block text-sm font-medium mb-2"
-                    >
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      id="first-name"
-                      className="w-full bg-saas-black border border-gray-700 rounded-lg px-4 py-3 focus:border-saas-orange focus:ring-saas-orange/50 focus:outline-none transition-colors"
-                      placeholder="John"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="firstName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>First Name</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="John" 
+                              {...field} 
+                              className="bg-saas-black border-gray-700 focus:border-saas-orange focus:ring-saas-orange/50"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="lastName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Last Name</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="Doe" 
+                              {...field} 
+                              className="bg-saas-black border-gray-700 focus:border-saas-orange focus:ring-saas-orange/50"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
                   </div>
-                  <div>
-                    <label
-                      htmlFor="last-name"
-                      className="block text-sm font-medium mb-2"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="last-name"
-                      className="w-full bg-saas-black border border-gray-700 rounded-lg px-4 py-3 focus:border-saas-orange focus:ring-saas-orange/50 focus:outline-none transition-colors"
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
 
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full bg-saas-black border border-gray-700 rounded-lg px-4 py-3 focus:border-saas-orange focus:ring-saas-orange/50 focus:outline-none transition-colors"
-                    placeholder="john@example.com"
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input 
+                            type="email" 
+                            placeholder="john@example.com" 
+                            {...field} 
+                            className="bg-saas-black border-gray-700 focus:border-saas-orange focus:ring-saas-orange/50"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Subject
-                  </label>
-                  <select
-                    id="subject"
-                    className="w-full bg-saas-black border border-gray-700 rounded-lg px-4 py-3 focus:border-saas-orange focus:ring-saas-orange/50 focus:outline-none transition-colors text-gray-300"
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="sales">Sales Inquiry</option>
-                    <option value="support">Technical Support</option>
-                    <option value="feedback">Product Feedback</option>
-                    <option value="partnership">Partnership Opportunity</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={5}
-                    className="w-full bg-saas-black border border-gray-700 rounded-lg px-4 py-3 focus:border-saas-orange focus:ring-saas-orange/50 focus:outline-none transition-colors"
-                    placeholder="Your message here..."
-                  ></textarea>
-                </div>
-
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="consent"
-                    className="h-4 w-4 border border-gray-700 rounded bg-saas-black focus:ring-saas-orange/50 focus:ring-offset-saas-black text-saas-orange"
+                  <FormField
+                    control={form.control}
+                    name="subject"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Subject</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="bg-saas-black border-gray-700 focus:border-saas-orange focus:ring-saas-orange/50 text-gray-300">
+                              <SelectValue placeholder="Select a subject" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent className="bg-saas-darkGray border-gray-700 text-white">
+                            <SelectItem value="sales">Sales Inquiry</SelectItem>
+                            <SelectItem value="support">Technical Support</SelectItem>
+                            <SelectItem value="feedback">Product Feedback</SelectItem>
+                            <SelectItem value="partnership">Partnership Opportunity</SelectItem>
+                            <SelectItem value="other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                  <label
-                    htmlFor="consent"
-                    className="ml-2 block text-sm text-gray-400"
-                  >
-                    I agree to the{" "}
-                    <a
-                      href="/privacy-policy"
-                      className="text-saas-orange hover:underline"
-                    >
-                      Privacy Policy
-                    </a>
-                  </label>
-                </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
-                >
-                  Send Message
-                </Button>
-              </form>
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            rows={5} 
+                            placeholder="Your message here..." 
+                            {...field} 
+                            className="bg-saas-black border-gray-700 focus:border-saas-orange focus:ring-saas-orange/50"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="consent"
+                    render={({ field }) => (
+                      <FormItem className="flex items-center space-x-2">
+                        <FormControl>
+                          <Checkbox 
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                            className="border-gray-700 bg-saas-black focus:ring-saas-orange/50 text-saas-orange"
+                          />
+                        </FormControl>
+                        <FormLabel className="text-sm text-gray-400 !mt-0">
+                          I agree to the{" "}
+                          <a
+                            href="/privacy-policy"
+                            className="text-saas-orange hover:underline"
+                          >
+                            Privacy Policy
+                          </a>
+                        </FormLabel>
+                      </FormItem>
+                    )}
+                  />
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+                  >
+                    Send Message
+                  </Button>
+                </form>
+              </Form>
             </div>
           </div>
 

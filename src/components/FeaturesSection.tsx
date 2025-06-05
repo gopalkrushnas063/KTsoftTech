@@ -43,7 +43,8 @@ const features = [
 const FeaturesSection = ({ id }) => {
   return (
     <section id={id}>
-      <div className="bg-saas-black py-16 md:py-24">
+      <div className="bg-saas-black pt-16 pb-8 md:pt-24 md:pb-12">
+
         <div className="section-container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
