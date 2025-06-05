@@ -76,7 +76,7 @@ const AboutPage = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             About{" "}
             <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-              Sassland
+              KTsoftTech
             </span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
@@ -125,7 +125,7 @@ const AboutPage = () => {
           <div>
             <h2 className="text-2xl font-bold mb-6">Our Story</h2>
             <p className="text-gray-400 mb-4">
-              Founded in 2020, Sassland began as a small team of passionate
+              Founded in 2020, KTsoftTech began as a small team of passionate
               developers who saw an opportunity to simplify complex business
               processes through technology.
             </p>
@@ -284,7 +284,7 @@ const AboutPage = () => {
             Ready to Transform Your Business?
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-            Join thousands of companies already using Sassland to streamline
+            Join thousands of companies already using KTsoftTech to streamline
             their operations and accelerate growth.
           </p>
           <button className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 inline-flex items-center">
