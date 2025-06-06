@@ -8,6 +8,7 @@ import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import TechStackAnimationSection from "@/components/TechStackAnimationSection";
+import WhoWeAreSection from "@/components/WhoWeAreSection";
 
 const Index = () => {
   return (
@@ -17,7 +18,8 @@ const Index = () => {
         <HeroSection id="home" />
         <FeaturesSection id="features" />
         <TechStackAnimationSection />
-        <PricingSection id="pricing" />
+        <WhoWeAreSection />
+        {/* <PricingSection id="pricing" /> */}
         <TestimonialsSection id="testimonials" />
         <FaqSection id="faq" />
         <CtaSection id="contact" />

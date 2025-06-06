@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -99,8 +99,8 @@ const Navbar = () => {
               
               {/* Services Dropdown */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="px-3 py-2 text-sm font-medium text-white hover:text-saas-orange focus:outline-none">
-                  Services
+                <DropdownMenuTrigger className="flex px-3 py-2 text-sm font-medium text-white hover:text-saas-orange focus:outline-none">
+                  Services{" "}<span><ChevronDown className="h-5.5 w-5.5" /></span>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-saas-darkGray border border-gray-800 min-w-[180px]">
                   <DropdownMenuItem 
@@ -153,7 +153,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="btn-primary w-full">Get Template</button>
+            <button className="btn-primary w-full">Contact Us</button>
           </div>
 
           {/* Mobile menu button */}

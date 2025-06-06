@@ -10,6 +10,9 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import ContactPage from "./pages/ContactPage";
 import ServicesPage from "./pages/ServicesPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import CareerPage from "./pages/CareerPage";
+import JobApplicationForm from "./pages/JobApplicationForm";
+import ApplyPage from "./pages/ApplyPage";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +30,9 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/careers" element={<CareerPage />} />
+          <Route path="/careers/apply" element={<ApplyPage />} />
+
           {/* <Route path="/" />
           <Route path="/" /> */}
         </Routes>
