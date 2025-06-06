@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,16 +96,28 @@ const Navbar = () => {
               >
                 Features
               </button>
-              <button
-                onClick={() => handleNavigation("/services")}
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  location.pathname === "/services"
-                    ? "text-saas-orange"
-                    : "text-white hover:text-saas-orange"
-                }`}
-              >
-                Services
-              </button>
+              
+              {/* Services Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className="px-3 py-2 text-sm font-medium text-white hover:text-saas-orange focus:outline-none">
+                  Services
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-saas-darkGray border border-gray-800 min-w-[180px]">
+                  <DropdownMenuItem 
+                    onClick={() => handleNavigation("/services")}
+                    className="cursor-pointer hover:bg-saas-orange/10 focus:bg-saas-orange/10"
+                  >
+                    Services
+                  </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    onClick={() => handleNavigation("/projects")}
+                    className="cursor-pointer hover:bg-saas-orange/10 focus:bg-saas-orange/10"
+                  >
+                    Projects
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               <button
                 onClick={() => handleNavigation("pricing")}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
@@ -187,6 +205,16 @@ const Navbar = () => {
               }`}
             >
               Services
+            </button>
+            <button
+              onClick={() => handleNavigation("/projects")}
+              className={`block px-3 py-2 text-base font-medium ${
+                location.pathname === "/projects"
+                  ? "text-saas-orange"
+                  : "text-white hover:text-saas-orange"
+              }`}
+            >
+              Projects
             </button>
             <button
               onClick={() => handleNavigation("pricing")}

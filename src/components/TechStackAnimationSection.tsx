@@ -5,7 +5,7 @@ const TechStackAnimationSection = () => {
   return (
     <section className="relative bg-gradient-to-b from-[#1c160c] to-saas-black py-12 md:py-16">
       <div className="section-container">
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
           <h2 className="text-3xl md:text-4xl font-bold">
             Our <span className="gradient-text">Technologies</span>
           </h2>
@@ -24,8 +24,8 @@ const TechStackAnimationSection = () => {
           </div>
 
           {/* Right Side: Globe */}
-          <div className="w-full lg:w-1/2 flex justify-center mt-4 lg:mt-0">
-            <div className="w-full h-[300px] sm:h-[350px] md:h-[400px]">
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <div className="w-full h-[250px] sm:h-[300px] md:h-[350px]">
               <TechStackGlobe />
             </div>
           </div>
