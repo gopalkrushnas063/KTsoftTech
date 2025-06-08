@@ -138,16 +138,7 @@ const Navbar = () => {
               >
                 Testimonials
               </button>
-              <button
-                onClick={() => handleNavigation("contact")}
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  location.pathname === "/" && location.hash === "#contact"
-                    ? "text-saas-orange"
-                    : "text-white hover:text-saas-orange"
-                }`}
-              >
-                Contact
-              </button>
+              
             </div>
           </div>
 
