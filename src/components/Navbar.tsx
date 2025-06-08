@@ -136,7 +136,7 @@ const Navbar = () => {
                     : "text-white hover:text-saas-orange"
                 }`}
               >
-                Testimonials
+                Testimonials1
               </button>
               
             </div>
