@@ -20,7 +20,7 @@ const Index = () => {
         <TechStackAnimationSection />
         <WhoWeAreSection />
         {/* <PricingSection id="pricing" /> */}
-        <TestimonialsSection id="testimonials" />
+        {/* <TestimonialsSection id="testimonials" /> */}
         <FaqSection id="faq" />
         <CtaSection id="contact" />
       </main>

@@ -134,7 +134,7 @@ const HeroSection = ({ id }) => {
                         </Button>
                       </div>
 
-                      <div className="mt-10 flex items-center justify-center lg:justify-start gap-4">
+                      {/* <div className="mt-10 flex items-center justify-center lg:justify-start gap-4">
                         <div className="flex -space-x-3">
                           <img
                             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64"
@@ -156,7 +156,7 @@ const HeroSection = ({ id }) => {
                           <span className="font-semibold text-saas-orange">500+</span>{" "}
                           businesses already using our platform
                         </p>
-                      </div>
+                      </div> */}
                     </div>
 
                     {/* Image Content */}

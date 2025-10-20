@@ -162,7 +162,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/careers"
                   className="text-gray-400 hover:text-saas-orange transition-colors"
                 >
                   Careers
@@ -215,7 +215,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
           <p>
             © {new Date().getFullYear()} KTsoftTech. All rights reserved. Build
-            by Codescandy
+            by KTsoftTech
           </p>
         </div>
       </div>

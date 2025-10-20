@@ -139,7 +139,7 @@ const WhoWeAreSection = () => {
           </div>
 
           {/* Meet the Team */}
-          <div>
+          {/* <div>
             <h3 className="text-2xl font-bold mb-8 text-center text-white">Meet The Team</h3>
             <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
               Our talented team brings diverse expertise and a shared passion for innovation to every project we undertake.
@@ -185,7 +185,7 @@ const WhoWeAreSection = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

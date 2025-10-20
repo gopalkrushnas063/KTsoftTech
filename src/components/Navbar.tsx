@@ -96,29 +96,32 @@ const Navbar = () => {
               >
                 Features
               </button>
-              
+
               {/* Services Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger className="flex px-3 py-2 text-sm font-medium text-white hover:text-saas-orange focus:outline-none">
-                  Services{" "}<span><ChevronDown className="h-5.5 w-5.5" /></span>
+                  Services{" "}
+                  <span>
+                    <ChevronDown className="h-5.5 w-5.5" />
+                  </span>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-saas-darkGray border border-gray-800 min-w-[180px]">
-                  <DropdownMenuItem 
+                  <DropdownMenuItem
                     onClick={() => handleNavigation("/services")}
-                    className="cursor-pointer hover:bg-saas-orange/10 focus:bg-saas-orange/10"
+                    className="cursor-pointer hover:bg-saas-orange focus:bg-saas-orange"
                   >
                     Services
                   </DropdownMenuItem>
-                  <DropdownMenuItem 
+                  <DropdownMenuItem
                     onClick={() => handleNavigation("/projects")}
-                    className="cursor-pointer hover:bg-saas-orange/10 focus:bg-saas-orange/10"
+                    className="cursor-pointer hover:bg-saas-orange focus:bg-saas-orange"
                   >
                     Projects
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <button
+              {/* <button
                 onClick={() => handleNavigation("pricing")}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
                   location.pathname === "/" && location.hash === "#pricing"
@@ -127,7 +130,7 @@ const Navbar = () => {
                 }`}
               >
                 Pricing
-              </button>
+              </button> */}
               <button
                 onClick={() => handleNavigation("testimonials")}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
@@ -136,9 +139,8 @@ const Navbar = () => {
                     : "text-white hover:text-saas-orange"
                 }`}
               >
-                Testimonials1
+                Testimonials
               </button>
-              
             </div>
           </div>
 
@@ -207,7 +209,7 @@ const Navbar = () => {
             >
               Projects
             </button>
-            <button
+            {/* <button
               onClick={() => handleNavigation("pricing")}
               className={`block px-3 py-2 text-base font-medium ${
                 location.pathname === "/" && location.hash === "#pricing"
@@ -216,7 +218,7 @@ const Navbar = () => {
               }`}
             >
               Pricing
-            </button>
+            </button> */}
             <button
               onClick={() => handleNavigation("testimonials")}
               className={`block px-3 py-2 text-base font-medium ${
