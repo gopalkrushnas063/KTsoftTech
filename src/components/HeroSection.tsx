@@ -19,7 +19,7 @@ const HeroSection = ({ id }) => {
   const heroSlides = [
     {
       title: "Transform Your Business With Our",
-      highlight: "KTsoftTech",
+      highlight: "KTsoftTech 2.0",
       description: "Streamline your operations, boost productivity, and enhance customer satisfaction with our cutting-edge SaaS platform. Experience seamless integration and unparalleled support.",
       image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=1200&h=600&q=80",
       imageLabel: "Modern Dashboard Interface"
