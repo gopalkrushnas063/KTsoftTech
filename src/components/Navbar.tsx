@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
 import {
@@ -65,8 +66,15 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <button
               onClick={() => handleNavigation("home")}
-              className="flex items-center cursor-pointer"
+              className="flex items-center gap-2 cursor-pointer"
             >
+              <motion.img
+                src="/favicon/web-app-manifest-512x512.png"
+                alt="KTsoftTech logo"
+                className="h-9 w-9 rounded-full"
+                whileHover={{ scale: 1.1, rotate: 8 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              />
               <span className="text-2xl font-bold bg-gradient-to-r from-saas-orange to-amber-500 bg-clip-text text-transparent">
                 KTsoftTech
               </span>
@@ -146,7 +154,12 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="btn-primary w-full">Contact Us</button>
+            <button
+              onClick={() => handleNavigation("/contact")}
+              className="btn-primary w-full"
+            >
+              Contact Us
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -240,7 +253,12 @@ const Navbar = () => {
               Contact
             </button>
             <div className="mt-4 px-3 py-2">
-              <button className="btn-primary w-full">Get Template</button>
+              <button
+                onClick={() => handleNavigation("/contact")}
+                className="btn-primary w-full"
+              >
+                Contact Us
+              </button>
             </div>
           </div>
         </div>

@@ -1,4 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.15 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 const testimonials = [
   {
@@ -27,9 +38,16 @@ const testimonials = [
 const TestimonialsSection = ({ id }) => {
   return (
     <section id={id}>
-      <div className="bg-saas-black py-16 md:py-24">
-        <div className="section-container">
+      <div className="bg-saas-black py-16 md:py-24 relative overflow-hidden">
+        {/* Background glow, consistent with other sections */}
+        <div className="absolute top-10 right-10 w-64 h-64 bg-saas-orange opacity-5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute bottom-10 left-10 w-56 h-56 bg-saas-orange opacity-5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="section-container relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block bg-saas-orange/10 text-saas-orange px-4 py-2 rounded-full text-sm font-medium mb-4 border border-saas-orange/20">
+              Testimonials
+            </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Trusted by <span className="gradient-text">Innovative</span>{" "}
               Companies
@@ -40,11 +58,18 @@ const TestimonialsSection = ({ id }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {testimonials.map((testimonial, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-gradient-to-b from-saas-darkGray to-saas-black border border-gray-800 rounded-xl p-6 card-shadow"
+                variants={cardVariants}
+                className="bg-gradient-to-b from-saas-darkGray to-saas-black border border-gray-800 hover:border-saas-orange/40 rounded-xl p-6 card-shadow transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex mb-6">
                   {[...Array(5)].map((_, i) => (
@@ -79,9 +104,9 @@ const TestimonialsSection = ({ id }) => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

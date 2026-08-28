@@ -1,6 +1,48 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { motion, useInView } from "framer-motion";
 import { Users, Rocket, Globe, Shield, HeartHandshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    let start: number | null = null;
+    const duration = 1200;
+    let frame: number;
+
+    const step = (timestamp: number) => {
+      if (start === null) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      setDisplay(Math.floor(progress * value));
+      if (progress < 1) frame = requestAnimationFrame(step);
+    };
+    frame = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(frame);
+  }, [isInView, value]);
+
+  return (
+    <span ref={ref}>
+      {display}
+      {suffix}
+    </span>
+  );
+};
+
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 const teamMembers = [
   {
@@ -104,17 +146,21 @@ const WhoWeAreSection = () => {
               
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="bg-saas-darkGray p-4 rounded-lg border border-gray-800">
-                  <div className="text-3xl font-bold text-saas-orange mb-2">250+</div>
+                  <div className="text-3xl font-bold text-saas-orange mb-2">
+                    <Counter value={250} suffix="+" />
+                  </div>
                   <div className="text-gray-400 text-sm">Happy Clients</div>
                 </div>
                 <div className="bg-saas-darkGray p-4 rounded-lg border border-gray-800">
-                  <div className="text-3xl font-bold text-saas-orange mb-2">98%</div>
+                  <div className="text-3xl font-bold text-saas-orange mb-2">
+                    <Counter value={98} suffix="%" />
+                  </div>
                   <div className="text-gray-400 text-sm">Customer Satisfaction</div>
                 </div>
               </div>
               
-              <Button className="bg-saas-orange hover:bg-orange-600">
-                Learn More About Us
+              <Button asChild className="bg-saas-orange hover:bg-orange-600">
+                <Link to="/about">Learn More About Us</Link>
               </Button>
             </div>
           </div>
@@ -122,10 +168,17 @@ const WhoWeAreSection = () => {
           {/* Our Values */}
           <div className="mb-20">
             <h3 className="text-2xl font-bold mb-8 text-center text-white">Our Core Values</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               {values.map((value, index) => (
-                <div 
+                <motion.div
                   key={index}
+                  variants={cardVariants}
                   className="bg-saas-darkGray p-6 rounded-xl border border-gray-800 hover:border-saas-orange/30 transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="bg-saas-orange/10 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
@@ -133,9 +186,9 @@ const WhoWeAreSection = () => {
                   </div>
                   <h4 className="text-xl font-semibold mb-2 text-white">{value.title}</h4>
                   <p className="text-gray-400">{value.description}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Meet the Team */}

@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const jobOpenings = [
   {
@@ -186,8 +186,8 @@ const CareerPage = () => {
             We’re always on the lookout for talented individuals. Reach out and
             let’s talk!
           </p>
-          <a
-            href="#"
+          <Link
+            to="/careers/apply?job=General%20Application"
             className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg inline-flex items-center"
           >
             Submit Resume
@@ -203,7 +203,7 @@ const CareerPage = () => {
                 clipRule="evenodd"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </main>
 

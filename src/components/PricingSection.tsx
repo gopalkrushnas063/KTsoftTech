@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 
@@ -140,13 +141,14 @@ const PricingSection = ({id}) => {
                 </ul>
 
                 <Button
+                  asChild
                   className={`w-full ${
                     plan.isPopular
                       ? "bg-saas-orange hover:bg-orange-600 text-white"
                       : "bg-secondary border border-saas-orange/30 hover:border-saas-orange text-white"
                   }`}
                 >
-                  {plan.ctaText}
+                  <Link to="/contact">{plan.ctaText}</Link>
                 </Button>
               </div>
             ))}

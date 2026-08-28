@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import {
@@ -86,9 +88,9 @@ const HeroSection = ({ id }) => {
     <section id={id}>
       <div className="relative bg-gradient-to-b from-saas-black to-[#1c160c] overflow-hidden min-h-[90vh] flex items-center">
         {/* Orange glow effects */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-saas-orange opacity-10 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-orange-700 opacity-15 rounded-full blur-[80px]"></div>
-        <div className="absolute top-20 right-1/4 w-[250px] h-[250px] bg-orange-400 opacity-10 rounded-full blur-[70px]"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-saas-orange opacity-10 rounded-full blur-[100px] animate-float-slow"></div>
+        <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-orange-700 opacity-15 rounded-full blur-[80px] animate-float-slower"></div>
+        <div className="absolute top-20 right-1/4 w-[250px] h-[250px] bg-orange-400 opacity-10 rounded-full blur-[70px] animate-float-slow"></div>
 
         <Carousel 
           setApi={setApi} 
@@ -122,16 +124,34 @@ const HeroSection = ({ id }) => {
                       </p>
 
                       <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <Button className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">
-                          Get Started Free
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                        <Button
-                          variant="outline"
-                          className="border-saas-orange text-saas-orange hover:bg-saas-orange hover:text-white"
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.97 }}
+                          className="inline-block"
                         >
-                          Book Demo
-                        </Button>
+                          <Button
+                            asChild
+                            className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+                          >
+                            <Link to="/contact">
+                              Get Started Free
+                              <ArrowRight className="ml-2 h-4 w-4" />
+                            </Link>
+                          </Button>
+                        </motion.div>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.97 }}
+                          className="inline-block"
+                        >
+                          <Button
+                            asChild
+                            variant="outline"
+                            className="border-saas-orange text-saas-orange hover:bg-saas-orange hover:text-white"
+                          >
+                            <Link to="/contact">Book Demo</Link>
+                          </Button>
+                        </motion.div>
                       </div>
 
                       {/* <div className="mt-10 flex items-center justify-center lg:justify-start gap-4">

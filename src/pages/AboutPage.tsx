@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, Rocket, Globe, Shield, BarChart2 } from "lucide-react";
@@ -287,10 +288,13 @@ const AboutPage = () => {
             Join thousands of companies already using KTsoftTech to streamline
             their operations and accelerate growth.
           </p>
-          <button className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 inline-flex items-center">
+          <Link
+            to="/contact"
+            className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 inline-flex items-center"
+          >
             Get Started Now
             <Rocket className="ml-2 h-5 w-5" />
-          </button>
+          </Link>
         </div>
       </main>
 

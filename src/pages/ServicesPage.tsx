@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Code, Smartphone, ShoppingCart, Monitor, Database, Cloud, Cpu, Shield } from 'lucide-react';
@@ -155,12 +156,18 @@ const ServicesPage = () => {
               Whether you need a website, mobile app, or complete digital transformation, our team of experts is ready to help you achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">
+              <Link
+                to="/contact"
+                className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+              >
                 Get a Free Consultation
-              </button>
-              <button className="border border-saas-orange text-saas-orange hover:bg-saas-orange hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">
+              </Link>
+              <Link
+                to="/contact"
+                className="border border-saas-orange text-saas-orange hover:bg-saas-orange hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+              >
                 Contact Sales
-              </button>
+              </Link>
             </div>
           </div>
         </div>
