@@ -238,29 +238,29 @@ const AboutPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               {
-                name: "Alex Johnson",
+                name: "Gopal Krishna",
                 role: "CEO & Founder",
-                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
-                bio: "Visionary leader with 15+ years in SaaS technology",
+                img: "https://media.licdn.com/dms/image/v2/D5603AQHYITWbw1tQjw/profile-displayphoto-crop_800_800/B56Z58yRr.IoAI-/0/1780210015690?e=1789603200&v=beta&t=TwWwWRzIokuI5pptilgws58n6kreDeF3HPH6zbwiRes",
+                bio: "Visionary leader with 5+ years in SaaS technology",
               },
+              // {
+              //   name: "Sarah Williams",
+              //   role: "CTO",
+              //   img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=80",
+              //   bio: "Tech innovator specializing in scalable architectures",
+              // },
               {
-                name: "Sarah Williams",
-                role: "CTO",
-                img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=80",
-                bio: "Tech innovator specializing in scalable architectures",
-              },
-              {
-                name: "Michael Chen",
+                name: "Twinkle Sahoo",
                 role: "Lead Developer",
-                img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&h=200&q=80",
+                img: "https://img.magnific.com/premium-psd/3d-cartoon-woman-business-suit-portrait_1216555-972.jpg?w=1480",
                 bio: "Full-stack wizard with a passion for clean code",
               },
-              {
-                name: "Emily Rodriguez",
-                role: "Product Manager",
-                img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80",
-                bio: "User experience advocate and product strategist",
-              },
+              // {
+              //   name: "Emily Rodriguez",
+              //   role: "Product Manager",
+              //   img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80",
+              //   bio: "User experience advocate and product strategist",
+              // },
             ].map((person, index) => (
               <div key={index} className="text-center group">
                 <div className="relative mb-4 mx-auto w-32 h-32">

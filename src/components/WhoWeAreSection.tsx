@@ -46,7 +46,7 @@ const cardVariants = {
 
 const teamMembers = [
   {
-    name: "Alex Johnson",
+    name: "Gopal Krishna",
     role: "CEO & Founder",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=faces",
     social: "@alexjohnson"
@@ -75,22 +75,26 @@ const values = [
   {
     icon: <Rocket className="h-6 w-6 text-saas-orange" />,
     title: "Innovation",
-    description: "We constantly push boundaries to deliver cutting-edge solutions."
+    description: "We constantly push boundaries to deliver cutting-edge solutions.",
+    image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=800&h=500&q=80"
   },
   {
     icon: <Globe className="h-6 w-6 text-saas-orange" />,
     title: "Global Impact",
-    description: "Our solutions are designed to work across borders and cultures."
+    description: "Our solutions are designed to work across borders and cultures.",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&h=500&q=80"
   },
   {
     icon: <Shield className="h-6 w-6 text-saas-orange" />,
     title: "Integrity",
-    description: "We maintain the highest ethical standards in all we do."
+    description: "We maintain the highest ethical standards in all we do.",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&h=500&q=80"
   },
   {
     icon: <HeartHandshake className="h-6 w-6 text-saas-orange" />,
     title: "Collaboration",
-    description: "We believe in the power of teamwork and partnerships."
+    description: "We believe in the power of teamwork and partnerships.",
+    image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=800&h=500&q=80"
   }
 ];
 
@@ -179,13 +183,24 @@ const WhoWeAreSection = () => {
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  className="bg-saas-darkGray p-6 rounded-xl border border-gray-800 hover:border-saas-orange/30 transition-all duration-300 hover:-translate-y-1"
+                  whileHover={{ y: -6 }}
+                  className="bg-saas-darkGray rounded-xl border border-gray-800 hover:border-saas-orange/30 transition-colors duration-300 overflow-hidden"
                 >
-                  <div className="bg-saas-orange/10 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-                    {value.icon}
+                  <div className="relative h-32 overflow-hidden">
+                    <img
+                      src={value.image}
+                      alt={value.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-saas-darkGray via-saas-darkGray/10 to-transparent" />
+                    <div className="absolute bottom-0 left-6 translate-y-1/2 bg-saas-darkGray border border-saas-orange/30 shadow-lg w-12 h-12 flex items-center justify-center rounded-lg">
+                      {value.icon}
+                    </div>
                   </div>
-                  <h4 className="text-xl font-semibold mb-2 text-white">{value.title}</h4>
-                  <p className="text-gray-400">{value.description}</p>
+                  <div className="p-6 pt-8">
+                    <h4 className="text-xl font-semibold mb-2 text-white">{value.title}</h4>
+                    <p className="text-gray-400">{value.description}</p>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>

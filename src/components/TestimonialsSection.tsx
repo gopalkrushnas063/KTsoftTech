@@ -11,31 +11,19 @@ const cardVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-const testimonials = [
-  {
-    text: "Implementing KTsoftTech has been a game-changer for our team. The intuitive interface and powerful features have significantly improved our productivity and collaboration.",
-    author: "Sarah Johnson",
-    position: "CTO, TechSolutions Inc.",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100",
-  },
-  {
-    text: "The customer support team at KTsoftTech is exceptional. They've been incredibly responsive and helped us optimize our workflow to get the most out of the platform.",
-    author: "Michael Chen",
-    position: "Operations Director, Nexus Corp",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100",
-  },
-  {
-    text: "We've tried several SaaS platforms before, but KTsoftTech offers the perfect balance of functionality and ease of use. It's become an essential part of our daily operations.",
-    author: "Emily Rodriguez",
-    position: "Product Manager, Innovation Labs",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100",
-  },
-];
+// Add real customer testimonials here as they come in — { text, author, position, image }.
+// The section renders nothing until at least one is added, so no placeholder/fake
+// content ever ships to the live site.
+const testimonials: {
+  text: string;
+  author: string;
+  position: string;
+  image: string;
+}[] = [];
 
 const TestimonialsSection = ({ id }) => {
+  if (testimonials.length === 0) return null;
+
   return (
     <section id={id}>
       <div className="bg-saas-black py-16 md:py-24 relative overflow-hidden">

@@ -139,7 +139,8 @@ const Navbar = () => {
               >
                 Pricing
               </button> */}
-              <button
+              {/* Re-enable once TestimonialsSection has real testimonials to show */}
+              {/* <button
                 onClick={() => handleNavigation("testimonials")}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
                   location.pathname === "/" && location.hash === "#testimonials"
@@ -148,7 +149,7 @@ const Navbar = () => {
                 }`}
               >
                 Testimonials
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -232,7 +233,8 @@ const Navbar = () => {
             >
               Pricing
             </button> */}
-            <button
+            {/* Re-enable once TestimonialsSection has real testimonials to show */}
+            {/* <button
               onClick={() => handleNavigation("testimonials")}
               className={`block px-3 py-2 text-base font-medium ${
                 location.pathname === "/" && location.hash === "#testimonials"
@@ -241,7 +243,7 @@ const Navbar = () => {
               }`}
             >
               Testimonials
-            </button>
+            </button> */}
             <button
               onClick={() => handleNavigation("contact")}
               className={`block px-3 py-2 text-base font-medium ${

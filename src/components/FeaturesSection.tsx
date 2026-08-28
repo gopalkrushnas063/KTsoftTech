@@ -18,36 +18,48 @@ const features = [
     title: "Smart Analytics",
     description:
       "Gain valuable insights with our advanced analytics, helping you make data-driven decisions.",
+    image:
+      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&h=500&q=80",
   },
   {
     icon: <Settings className="h-6 w-6 text-saas-orange" />,
     title: "Easy Integration",
     description:
       "Seamlessly integrate with your existing tools and workflows. No disruption to your business.",
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500&q=80",
   },
   {
     icon: <User className="h-6 w-6 text-saas-orange" />,
     title: "User Management",
     description:
       "Powerful user management and permission controls to keep your data secure and accessible.",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&h=500&q=80",
   },
   {
     icon: <Home className="h-6 w-6 text-saas-orange" />,
     title: "Customizable Dashboard",
     description:
       "Create custom dashboards tailored to your specific needs and business goals.",
+    image:
+      "https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&w=800&h=500&q=80",
   },
   {
     icon: <Calendar className="h-6 w-6 text-saas-orange" />,
     title: "Task Scheduler",
     description:
       "Automate your workflows with our powerful task scheduling system.",
+    image:
+      "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&h=500&q=80",
   },
   {
     icon: <Check className="h-6 w-6 text-saas-orange" />,
     title: "Progress Tracking",
     description:
       "Monitor your team's progress and achievements with real-time reporting.",
+    image:
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&h=500&q=80",
   },
 ];
 
@@ -82,18 +94,28 @@ const FeaturesSection = ({ id }) => {
                 key={index}
                 variants={cardVariants}
                 whileHover={{ y: -6 }}
-                className="bg-saas-darkGray p-6 rounded-xl border border-gray-800 hover:border-saas-orange/50 transition-colors duration-300 card-shadow"
+                className="bg-saas-darkGray rounded-xl border border-gray-800 hover:border-saas-orange/50 transition-colors duration-300 card-shadow overflow-hidden"
               >
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="bg-saas-orange/10 w-12 h-12 flex items-center justify-center rounded-lg mb-4"
-                >
-                  {feature.icon}
-                </motion.div>
-                <h3 className="text-xl font-semibold mb-2 text-white">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-400">{feature.description}</p>
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-saas-darkGray via-saas-darkGray/10 to-transparent" />
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="absolute bottom-0 left-6 translate-y-1/2 bg-saas-darkGray border border-saas-orange/30 shadow-lg w-12 h-12 flex items-center justify-center rounded-lg"
+                  >
+                    {feature.icon}
+                  </motion.div>
+                </div>
+                <div className="p-6 pt-8">
+                  <h3 className="text-xl font-semibold mb-2 text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
