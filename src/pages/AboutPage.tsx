@@ -251,7 +251,7 @@ const AboutPage = () => {
               // },
               {
                 name: "Twinkle Sahoo",
-                role: "Lead Developer",
+                role: "CTO",
                 img: "https://img.magnific.com/premium-psd/3d-cartoon-woman-business-suit-portrait_1216555-972.jpg?w=1480",
                 bio: "Full-stack wizard with a passion for clean code",
               },
