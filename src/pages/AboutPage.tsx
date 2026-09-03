@@ -239,7 +239,7 @@ const AboutPage = () => {
             {[
               {
                 name: "Gopal Krishna",
-                role: "CEO & Founder",
+                role: "CTO & Co-Founder",
                 img: "https://media.licdn.com/dms/image/v2/D5603AQHYITWbw1tQjw/profile-displayphoto-crop_800_800/B56Z58yRr.IoAI-/0/1780210015690?e=1789603200&v=beta&t=TwWwWRzIokuI5pptilgws58n6kreDeF3HPH6zbwiRes",
                 bio: "Visionary leader with 5+ years in SaaS technology",
               },
@@ -251,7 +251,7 @@ const AboutPage = () => {
               // },
               {
                 name: "Twinkle Sahoo",
-                role: "CTO",
+                role: "CEO & Co-Founder",
                 img: "https://img.magnific.com/premium-psd/3d-cartoon-woman-business-suit-portrait_1216555-972.jpg?w=1480",
                 bio: "Full-stack wizard with a passion for clean code",
               },
