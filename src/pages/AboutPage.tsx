@@ -228,7 +228,7 @@ const AboutPage = () => {
         </div>
 
         {/* Meet Our Team section */}
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <h2 className="text-3xl font-bold mb-8 text-center">
             Meet Our{" "}
             <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
@@ -277,7 +277,7 @@ const AboutPage = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* CTA Section */}
         <div className="mt-16 bg-gradient-to-r from-saas-orange/20 to-amber-600/20 rounded-2xl p-8 md:p-12 text-center">
