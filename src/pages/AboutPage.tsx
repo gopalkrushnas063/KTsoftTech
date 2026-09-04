@@ -227,7 +227,7 @@ const AboutPage = () => {
           </div>
         </div>
 
-        {/* Meet Our Team section */}
+        {/* Meet Our Team section  */}
         {/* <div className="mt-16">
           <h2 className="text-3xl font-bold mb-8 text-center">
             Meet Our{" "}
