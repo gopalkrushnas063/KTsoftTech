@@ -183,19 +183,19 @@ const AboutPage = () => {
 
         {/* Trusted By Section */}
         <div className="mt-16 relative">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          {/* <h2 className="text-3xl font-bold mb-8 text-center">
             Trusted By{" "}
             <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
               Leading Companies
             </span>
-          </h2>
+          </h2> */}
 
           <div className="relative overflow-hidden">
             {/* Gradient fades */}
-            <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-saas-black via-saas-black/90 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-saas-black via-saas-black/90 to-transparent z-10 pointer-events-none"></div>
+            {/* <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-saas-black via-saas-black/90 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-saas-black via-saas-black/90 to-transparent z-10 pointer-events-none"></div> */}
 
-            <div
+            {/* <div
               ref={scrollContainerRef}
               className="overflow-x-hidden py-6"
               onMouseEnter={() => setIsPaused(true)}
@@ -223,7 +223,7 @@ const AboutPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
